@@ -1,0 +1,7 @@
+{
+  "name": "AI Personal Finance Assistant",
+  "description": "An intelligent voice-powered accounting assistant that automatically parses and structures your expense entries from natural speech. Supports custom categories, date interpretation, and multi-language input (English & Traditional Chinese).",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

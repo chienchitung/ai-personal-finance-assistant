@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Voice Accounting Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0"
+  }
+}
+</script>
+<style>
+  /* Dark theme (default) */
+  :root {
+    --bg-color: #000000;
+    --bg-modal: rgba(10, 10, 10, 0.7);
+    --bg-element: rgba(0, 255, 255, 0.1);
+    --bg-element-hover: rgba(0, 255, 255, 0.15);
+    --bg-input: rgba(15, 23, 42, 0.5);
+    --bg-button-primary: rgba(34, 211, 238, 0.7);
+    --bg-button-primary-hover: rgba(6, 182, 212, 0.8);
+    --bg-button-secondary: rgba(51, 65, 85, 0.6);
+    --bg-button-secondary-hover: rgba(71, 85, 105, 0.7);
+
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-accent: #67e8f9;
+    --text-accent-secondary: #a5f3fc;
+    --text-button-primary: #ffffff;
+    --text-button-secondary: #e5e7eb;
+
+    --border-color: rgba(0, 255, 255, 0.3);
+    --border-glow: rgba(0, 255, 255, 0.5);
+    --shadow-glow: rgba(0, 255, 255, 0.2);
+    --cyan-main: #00ffff;
+    
+    --color-scheme: dark;
+  }
+
+  /* Light theme */
+  html.light {
+    --bg-color: #f0f2f5;
+    --bg-modal: rgba(252, 252, 252, 0.7);
+    --bg-element: rgba(0, 122, 255, 0.08);
+    --bg-element-hover: rgba(0, 122, 255, 0.12);
+    --bg-input: rgba(230, 230, 230, 0.6);
+    --bg-button-primary: #007aff;
+    --bg-button-primary-hover: #0056b3;
+    --bg-button-secondary: #e5e5ea;
+    --bg-button-secondary-hover: #d1d1d6;
+
+    --text-primary: #1c1c1e;
+    --text-secondary: #636366;
+    --text-accent: #007aff;
+    --text-accent-secondary: #0056b3;
+    --text-button-primary: #ffffff;
+    --text-button-secondary: #1c1c1e;
+
+    --border-color: rgba(0, 122, 255, 0.4);
+    --border-glow: rgba(0, 122, 255, 0.5);
+    --shadow-glow: rgba(0, 122, 255, 0.15);
+    --cyan-main: #007aff;
+
+    --color-scheme: light;
+  }
+
+  .backdrop-blur-md {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Orbitron', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .tech-glow {
+    box-shadow: 0 0 5px var(--shadow-glow), 0 0 10px var(--shadow-glow);
+    transition: all 0.3s ease-in-out;
+  }
+  .tech-glow:hover {
+    box-shadow: 0 0 10px var(--shadow-glow), 0 0 20px var(--shadow-glow);
+  }
+  .scanner-ring {
+    border-radius: 50%;
+    position: absolute;
+    border: 1px solid var(--border-glow);
+    animation: scanner-pulse 4s linear infinite;
+  }
+  .date-input-color-scheme {
+    color-scheme: var(--color-scheme);
+  }
+  @keyframes scanner-pulse {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-scanner-2 {
+     animation-delay: -2s;
+  }
+  .animate-rotate {
+      animation: rotate 10s linear infinite;
+  }
+</style>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
